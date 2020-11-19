@@ -1,9 +1,12 @@
 # Start from a Java image.
-FROM java:8
+FROM openjdk:8-jre-alpine
 # RocketMQ version
 ENV ROCKETMQ_VERSION 4.7.1
 
 RUN mkdir -p /opt/logs /opt/store
+
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
+    && apk --no-cache add curl
 
 RUN cd /opt && curl https://mirrors.tuna.tsinghua.edu.cn/apache/rocketmq/${ROCKETMQ_VERSION}/rocketmq-all-${ROCKETMQ_VERSION}-bin-release.zip -o rocketmq.zip \
     && unzip -q rocketmq.zip -d . && rm rocketmq.zip && mv /opt/rocketmq-all-${ROCKETMQ_VERSION}-bin-release /opt/rocketmq-${ROCKETMQ_VERSION}
