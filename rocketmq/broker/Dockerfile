@@ -20,6 +20,7 @@ ENV PROPERTIES_FILE $PROPERTIES_FILE
 RUN echo "brokerIP1=$BROKER_IP1" >> $ROCKETMQ_HOME/conf/$PROPERTIES_FILE \
     && echo "listenPort=$LISTEN_PORT" >> $ROCKETMQ_HOME/conf/$PROPERTIES_FILE \
     && echo "autoCreateTopicEnable=true" >> $ROCKETMQ_HOME/conf/$PROPERTIES_FILE \
+    && echo "enablePropertyFilter=true" >> $ROCKETMQ_HOME/conf/$PROPERTIES_FILE \
     && echo "autoCreateSubscriptionGroup=true" >> $ROCKETMQ_HOME/conf/$PROPERTIES_FILE
 
 VOLUME /opt/logs /opt/store
