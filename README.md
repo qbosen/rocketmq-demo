@@ -48,14 +48,7 @@
    2. ZeroMQ，基于消息队列的多线程网络库。
    3. Pulsar，存储与计算分离，下一代MQ。
 
-# 脉络
+# 参考
 
-1. 架构
-   1. 注册过程
-   2. 客户端负载、重试
-   3. 多方心跳
-2. 角色、概念
-   1. group，producer本地事物查询，consumer消息重试
-   2. 严格顺序：topic有序
-3. 特性、例子
-   1. 
+1. [rocketmq spring-boot支持](https://github.com/apache/rocketmq-spring/wiki)
+2. [rocketmq 源码、文档、例子](https://github.com/apache/rocketmq)
